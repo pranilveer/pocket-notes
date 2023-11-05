@@ -1,4 +1,4 @@
-.body{
+.home{
     width: 75vw;
     height: 100vh;
     background-color: #F7ECDC;
@@ -6,7 +6,6 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
 }
 
 .homebottom{
@@ -33,4 +32,10 @@
 .p{
     margin: 0;
     font-weight: 500;
+}
+
+@media screen and (max-width:500px){
+    .body{
+        display: none;
+    }
 }

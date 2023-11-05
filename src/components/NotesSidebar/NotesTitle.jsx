@@ -1,18 +1,18 @@
 import React from 'react'
-import "./NotesTitle.module.css"
-import usePocketContext from "../hooks/usePocketContext"
+import "./NotesTitle.css"
+import usePocketContext from "../../hooks/usePocketContext"
 
 const NotesTitle = ({ title }) => {
   const { selected, setSelected } = usePocketContext();
   const nameInitals = title[0].name
     .split(" ")
-    .map((word) => word.charAt(0))
+    .map((word) => word.charAt(0) + word.charAt(1))
     .join("")
     .toUpperCase();
 
   const newTitle = title[0].name
     .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) => word.charAt(0).toUpperCase() +word.slice(1))
     .join(" ");
 
   const handleClick = () => {
@@ -20,12 +20,11 @@ const NotesTitle = ({ title }) => {
   };
 
   return (
-    <div onClick={handleClick} className={`group__title__logo ${selected === title[0].name ? "highlighted__title" : null
-      }`}>
-      <div className="title__logo" style={{ backgroundColor: title[0].color }}>
+    <div onClick={handleClick} className={`grouplogo ${selected === title[0].name && "titlehighlight" }`}>
+      <div className="titlelogo" style={{ backgroundColor: title[0].color }}>
         {nameInitals}
       </div>
-      <div className="group__title">{newTitle}</div>
+      <div className="grouptitle">{newTitle}</div>
     </div>
   )
 }

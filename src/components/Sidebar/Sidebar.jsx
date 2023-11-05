@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Sidebar.module.css"
+import './sidebar.css'
 import NotesTitle from "../NotesSidebar/NotesTitle";
-import Popup from "../Popup/Popup";
+import Popup from "../../components/Popup/Popup"
 
-const Sidebar = () =>{
+const Sidebar = () => {
     const [titles, setTitles] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const [groupNamesParent, setGroupNamesParent] = useState(
         localStorage.getItem("groupNames") || []
     )
 
-    const handleClick = () =>{
+    const handleClick = () => {
         setShowPopup(true);
     }
 
@@ -18,17 +18,17 @@ const Sidebar = () =>{
         setShowPopup(false);
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         const data = localStorage.getItem("groupNames");
-        if(data){
+        if (data) {
             setGroupNamesParent(JSON.parse(data));
-        }else{
+        } else {
             setGroupNamesParent([]);
         }
     }, []);
 
-    useEffect(()=>{
-        if(groupNamesParent.length >0){
+    useEffect(() => {
+        if (groupNamesParent.length > 0) {
             const obj = JSON.parse(localStorage.getItem("groupNames"));
             const result = Object.keys(obj).map((key) => [obj[key]]);
             setTitles(result);
@@ -36,29 +36,29 @@ const Sidebar = () =>{
     }, [groupNamesParent]);
 
     return (
-      <div className={styles.sidebar}>
-        <div className={styles.title}>Pocket Notes</div>
-        <div className={styles.notesBtn}>
-            <button className={styles.addbutton} onClick={handleClick}>
-                <span className={styles.add}>+</span>
-                <span>Create Notes Group</span>
-            </button>
-        </div>
-        <div className={styles.notesTitle}>
-            {titles.length > 0 ?(
-                titles.map((title, index) => <NotesTitle key={index} title={title} />)
-            ):(
-                <div>
-                    <p>No Notes Group Created</p>
+        <div className="sidebar">
+            <div className="title">Pocket Notes</div>
+            <div className="notesBtn">
+                <button className="addbutton" onClick={handleClick}>
+                    <span className="add">+</span>
+                    <span>Create Notes Group</span>
+                </button>
+            </div>
+            <div className="notesTitle">
+                {titles.length > 0 ? (
+                    titles.map((title, index) => <NotesTitle key={index} title={title} />)
+                ) : (
+                    <div>
+                        <p>No Notes Group Created</p>
+                    </div>
+                )}
+            </div>
+            {showPopup && (
+                <div className="popupbody">
+                    <Popup groupNamesParent={groupNamesParent} setGroupNamesParent={setGroupNamesParent} onClose={handleClose}/>
                 </div>
             )}
         </div>
-        { showPopup && (
-            <div className={styles.popup}>
-                <Popup groupNamesParent={groupNamesParent} setGroupNamesParent={setGroupNamesParent} onClose={handleClose}/>
-            </div>
-        )}
-      </div>
     )
 
 }
