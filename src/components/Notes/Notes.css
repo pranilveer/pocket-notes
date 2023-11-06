@@ -76,3 +76,31 @@
     height: 20px;
     cursor: pointer;
 }
+
+
+.mobile-notes{
+    height: 10vh;
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2vh 0 2vh 3vh;
+}
+
+.mobile-icon{
+    height: 9vh;
+    width: 9vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+    font-weight: 600;
+}
+
+.mobile-title{
+    width: 50vw;
+    text-align: left;
+    font-size: 3vh;
+    font-weight: 600;
+}

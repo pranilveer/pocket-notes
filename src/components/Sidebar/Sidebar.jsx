@@ -37,7 +37,7 @@ const Sidebar = () => {
 
     return (
         <div className="sidebar">
-            <div className="title">Pocket Notes</div>
+            <div className="maintitle">Pocket Notes</div>
             <div className="notesBtn">
                 <button className="addbutton" onClick={handleClick}>
                     <span className="add">+</span>

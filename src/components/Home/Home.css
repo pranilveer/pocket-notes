@@ -1,3 +1,8 @@
+.homepage{
+    width: 75vw;
+    height: 100vh;
+}
+
 .home{
     width: 75vw;
     height: 100vh;
@@ -34,8 +39,30 @@
     font-weight: 500;
 }
 
+.mobilehome{
+    display: none;
+}
+
 @media screen and (max-width:500px){
-    .body{
+    .homepage{
+        width: 100vw;
+        height: 100vh;
+    }
+    .home{
         display: none;
     }
+
+    .mobilehome{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+
 }

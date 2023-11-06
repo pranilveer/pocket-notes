@@ -67,7 +67,6 @@
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    background-color: black;
   }
   
   .color1{
@@ -96,16 +95,15 @@
   
   .create {
     height: 2rem;
-    width: 23rem;
+    width: 90%;
     display: flex;
     justify-content: flex-end;
-    margin: 1vh 1vh 1vh 1vh;
   }
   
   .create > button {
     margin-top: 1rem;
     height: 5vh;
-    width: 8vw;
+    width: 15vw;
     color: white;
     font-weight: 500;
     border: none;
@@ -137,105 +135,54 @@
 
 @media screen and (max-width:500px) {
     .popup {
-        /* position: fixed;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        width: 90vw;
         height: 35vh;
-        border-radius: 2vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2vh;
-        z-index: 9999; */
-        height: 30vh;
         width: 70%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        border: none;
-        border-radius: 0.2rem;
-        padding: 20px;
         margin: auto;
       }
       
       .title {
-        text-align: left;
-        height: 5vh;
-        width: 90vw;
-        font-size: 3.2vh;
+        width: 100%;
+        font-size: 2.8vh;
         font-weight: 700;
-        margin-left: 5vw;
+        align-items: center;
+        display: flex;
+        justify-content: center;
       }
       
       .input {
         height: 8vh;
         width: 100%;
-        font-size: 4vw;
-        font-weight: 600;
+        font-size: 16px;
         display: flex;
+        margin: 0 auto;
         justify-content: center;
-        gap: 2vw;
         align-items: center;
-        margin: 1vh 1vh 1vh 1vh;
       }
       
       .input > input {
-          width: 60vw;
+          width: 49%;
           height: 3vh;
-          border: 2px solid grey;
-          border-radius: 6vh;
-          padding: 0.5rem;
-          font-size: 2vh;
-          font-weight: 600;
+          padding: 0.3rem;
+          font-size: 1.8vh;
       }
-      
-      /* .mobile__popup__color__input{
-          height: 5vh;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          gap: 3vw;
-          align-items: center;
-      }
-      
-      .mobile__popup__color__input > span{
-          font-size: large;
-          font-weight: 600;
-      }
-      
-      .mobile__popup__color__input__color{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 2vw;
-      }
-      
-      .mobile__popup__close {
-        height: 5vh;
-        width: 90vw;
-        display: flex;
-        justify-content: flex-end;
-        margin: 1vh 1vh 1vh 1vh;
-      }
-      
-      .mobile__popup__close > button {
-        margin-top: 1rem;
-        height: 6vh;
-        width: 25vw;
-        color: white;
-        font-weight: 500;
-        border: none;
-        border-radius: 4vh;
-        background-color: black;
-      } */
 
-      
+      .colorinput {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .create{
+        margin: 0 auto;
+        justify-content: center;
+      }
+
+      .create > button {
+        height: 5vh;
+        width: 80%;
+      }
+
+      .color1, .color2, .color3, .color4, .color5, .color6 {
+        width: 2.5vh;
+        height: 2.5vh;
+      }
 }
