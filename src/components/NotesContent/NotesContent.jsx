@@ -1,7 +1,7 @@
 import React from "react";
 import "./NotesContent.css"
 
-const NotesContent = ({note}) => {
+const NotesContent = ({ note }) => {
     return (
         <div className="contentbody">
             <div className="datetime">
@@ -9,6 +9,7 @@ const NotesContent = ({note}) => {
                 <div className="time">{note.time}</div>
             </div>
             <div className="content">
+                {/* Display the content of the note */}
                 <p>{note.content}</p>
             </div>
 

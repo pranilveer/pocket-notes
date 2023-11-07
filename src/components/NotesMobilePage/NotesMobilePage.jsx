@@ -8,24 +8,27 @@ import NotesContent from "../NotesContent/NotesContent";
 import usePocketContext from "../../hooks/usePocketContext";
 
 function NotesMobilePage() {
-  const [text, setText] = useState("");
-  const [bgColor, setBgColor] = useState("#fff");
-  const [initials, setInitials] = useState("");
-  const [selectedTitle, setSelectedTitle] = useState("");
-  const navigate = useNavigate();
-  const { notes, setNotes, selected, setSelected } = usePocketContext();
+  const [text, setText] = useState("");     // State to manage the text input for notes
+  const [bgColor, setBgColor] = useState("#fff");     // State to manage the background color of the selected group
+  const [initials, setInitials] = useState("");     // State to store initials of the group name
+  const [selectedTitle, setSelectedTitle] = useState("");     // State to store the formatted group name
+  const navigate = useNavigate();   // React Router's navigate function for navigation
+  const { notes, setNotes, selected, setSelected } = usePocketContext();   // Access notes, setNotes, selected, and setSelected from the context
 
   useEffect(() => {
+    // Load selected group, notes, and its properties from localStorage
     setSelected(localStorage.getItem("selected") || "");
     setNotes(JSON.parse(localStorage.getItem(selected)) || []);
+
     const groupNames = JSON.parse(localStorage.getItem("groupNames"));
+
     const selectedGroup = groupNames.find((group) => group.name === selected);
     if (selectedGroup) {
       setBgColor(selectedGroup.color);
       setInitials(
         selectedGroup.name
           .split(" ")
-          .map((word) => word.charAt(0))
+          .map((word) => word.charAt(0) + word.charAt(1))
           .join("")
           .toUpperCase()
       );
@@ -47,6 +50,7 @@ function NotesMobilePage() {
   };
 
   const handleSaveNotes = (e) => {
+    // Save a new note to the selected group in localStorage
     const notes = JSON.parse(localStorage.getItem(selected)) || [];
     const newNoteObj = {
       id: Date.now(),

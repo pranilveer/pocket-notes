@@ -1,77 +1,85 @@
 .popup {
-    height: 12rem;
-    width: 25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    border: none;
-    border-radius: 0.2rem;
-    padding: 20px;
-  }
-  
-  .title {
-    text-align: left;
-    height: 2rem;
-    width: 23rem;
-    font-size: 3.2vh;
-    font-weight: 700;
-    margin: 0 1vh 1vh 1vh;
-  }
-  
-  .input {
-      height: 2rem;
-    width: 23rem;
-    font-size: 3vh;
-    font-weight: 600;
-    display: flex;
-    gap: 2vw;
-    align-items: center;
-    margin: 1vh 1vh 1vh 1vh;
-  }
-  
-  .input > input {
-    width: 55%;
-    height: 3vh;
-    border: 2px solid grey;
-    border-radius: 6vh;
-    padding: 0.5rem;
-    font-size: 2vh;
-    font-weight: 600;
-  }
-  
-  .colorinput {
-  
-    font-size: 3vh;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    gap: 3vw;
-    align-items: center;
-    margin: 2vh 1vh 1vh 1vh;
-  }
-  
-  .inputcolor {
-    display: flex;
-    gap: 1vw;
-  }
-  
-  .color1, .color2, .color3, .color4, .color5, .color6 {
-    width: 3vh;
-    height: 3vh;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .color1{
-      background-color: #B38BFA;
-  }
+  /* Styles for the popup container */
+  height: 12rem;
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 20px;
+}
+
+.title {
+  /* Styles for the popup title */
+  text-align: left;
+  height: 2rem;
+  width: 23rem;
+  font-size: 3.2vh;
+  font-weight: 700;
+  margin: 0 1vh 1vh 1vh;
+}
+
+.input {
+  /* Styles for the input container */
+  height: 2rem;
+  width: 23rem;
+  font-size: 3vh;
+  font-weight: 600;
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+  margin: 1vh 1vh 1vh 1vh;
+}
+
+.input > input {
+  /* Styles for the input field */
+  width: 55%;
+  height: 3vh;
+  border: 2px solid grey;
+  border-radius: 6vh;
+  padding: 0.5rem;
+  font-size: 2vh;
+  font-weight: 600;
+}
+
+.colorinput {
+  /* Styles for the color input section */
+  font-size: 3vh;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  align-items: center;
+  margin: 2vh 1vh 1vh 1vh;
+}
+
+.inputcolor {
+  /* Styles for the color selection container */
+  display: flex;
+  gap: 1vw;
+}
+
+/* Color divs */
+.color1, .color2, .color3, .color4, .color5, .color6 {
+  /* Styles for color selection divs */
+  width: 3vh;
+  height: 3vh;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/* Colors for individual divs */
+.color1 {
+  background-color: #B38BFA;
+}
   
   .color2{
       background-color: #FF79F2;
@@ -94,6 +102,7 @@
   }
   
   .create {
+    /* Styles for the 'Create' button container */
     height: 2rem;
     width: 90%;
     display: flex;
@@ -101,6 +110,7 @@
   }
   
   .create > button {
+    /* Styles for the 'Create' button */
     margin-top: 1rem;
     height: 5vh;
     width: 15vw;
@@ -112,77 +122,87 @@
     cursor: pointer;
   }
   
-  .highlight{
-      border: 2px solid black;
-      border-radius: 6vh;
+  .highlight {
+    /* Styles for the highlighted color div */
+    border: 2px solid black;
+    border-radius: 6vh;
   }
   
-
-::-webkit-scrollbar {
+  /* Hide the scrollbar */
+  ::-webkit-scrollbar {
     display: none;
   }
-
-.closebtn button{
-  background-color: black;
-  color: white;
-  border: 2px solid black;
-  border-radius: 5px;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  cursor: pointer;
-}
-
-@media screen and (max-width:500px) {
+  
+  .closebtn button {
+    /* Styles for the close button */
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 500px) {
+    /* Responsive styles for screens with a max width of 500px */
     .popup {
-        height: 35vh;
-        width: 70%;
-        margin: auto;
-      }
-      
-      .title {
-        width: 100%;
-        font-size: 2.8vh;
-        font-weight: 700;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-      }
-      
-      .input {
-        height: 8vh;
-        width: 100%;
-        font-size: 16px;
-        display: flex;
-        margin: 0 auto;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      .input > input {
-          width: 49%;
-          height: 3vh;
-          padding: 0.3rem;
-          font-size: 1.8vh;
-      }
-
-      .colorinput {
-        font-size: 16px;
-        font-weight: 600;
-      }
-
-      .create{
-        margin: 0 auto;
-        justify-content: center;
-      }
-
-      .create > button {
-        height: 5vh;
-        width: 80%;
-      }
-
-      .color1, .color2, .color3, .color4, .color5, .color6 {
-        width: 2.5vh;
-        height: 2.5vh;
-      }
-}
+      height: 35vh;
+      width: 70%;
+      margin: auto;
+    }
+  
+    .title {
+      /* Styles for the title in the responsive view */
+      width: 100%;
+      font-size: 2.8vh;
+      font-weight: 700;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .input {
+      /* Styles for the input container in the responsive view */
+      height: 8vh;
+      width: 100%;
+      font-size: 16px;
+      display: flex;
+      margin: 0 auto;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .input > input {
+      /* Styles for the input field in the responsive view */
+      width: 49%;
+      height: 3vh;
+      padding: 0.3rem;
+      font-size: 1.8vh;
+    }
+  
+    .colorinput {
+      /* Styles for the color input section in the responsive view */
+      font-size: 16px;
+      font-weight: 600;
+    }
+  
+    .create {
+      /* Styles for the 'Create' button container in the responsive view */
+      margin: 0 auto;
+      justify-content: center;
+    }
+  
+    .create > button {
+      /* Styles for the 'Create' button in the responsive view */
+      height: 5vh;
+      width: 80%;
+    }
+  
+    .color1, .color2, .color3, .color4, .color5, .color6 {
+      /* Styles for color selection divs in the responsive view */
+      width: 2.5vh;
+      height: 2.5vh;
+    }
+  }

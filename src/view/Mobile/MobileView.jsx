@@ -12,6 +12,7 @@ const MobileView = () => {
     );
   
     useEffect(() => {
+      // Load group names from local storage and set state
       const data = localStorage.getItem("groupNames");
       if (data) {
         setGroupNamesParent(JSON.parse(data));
@@ -22,6 +23,7 @@ const MobileView = () => {
   
     useEffect(() => {
       if (groupNamesParent.length > 0) {
+        // Extract titles from the groupNamesParent state and set in titles state
         const obj = JSON.parse(localStorage.getItem("groupNames"));
         const result = Object.keys(obj).map((key) => [obj[key]]);
         setTitles(result);
@@ -29,10 +31,12 @@ const MobileView = () => {
     }, [groupNamesParent]);
   
     const handleClick = () => {
+      // Show the popup when the "Create Notes Group" button is clicked
       setShowPopup(true);
     };
   
     const handleClose = () => {
+      // Close the popup when the user clicks outside or uses the "X" button
       setShowPopup(false);
     };
 
@@ -47,6 +51,7 @@ const MobileView = () => {
             </div>
             <div className="mobile-notes-title">
                 {titles.length > 0 ? (
+                    // Render NotesMobile components for each group
                     titles.map((title, index) => (
                         <NotesMobile
                             title={title}
@@ -54,6 +59,7 @@ const MobileView = () => {
                         />
                     ))
                 ) : (
+                    // Render the Home component if no groups are available
                     <Home />
                 )}
             </div>

@@ -11,10 +11,12 @@ const Notes = () => {
     const [selectedTitle, setSelectedTitle] = useState("");
     const { notes, setNotes, selected } = usePocketContext();
 
+    // Handle text input change
     const handleChange = (e) => {
         setText(e.target.value);
     };
 
+    // Handle saving notes
     const handleSaveNotes = () => {
         if (!text.trim()) {
             return;
@@ -37,6 +39,7 @@ const Notes = () => {
         setNotes(notes);
     };
 
+    // Handle Enter key press
     const handleKeyDown = (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
@@ -44,6 +47,7 @@ const Notes = () => {
         }
     };
 
+    // Fetch and set group details based on the selected group
     useEffect(() => {
         setNotes(JSON.parse(localStorage.getItem(selected)) || []);
         const groupNames = JSON.parse(localStorage.getItem("groupNames"));
